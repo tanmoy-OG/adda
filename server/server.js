@@ -1,6 +1,8 @@
 import dotenv from "dotenv";
 import express from "express";
 import authRoutes from "./routes/authRoutes.js";
+import messageRoutes from "./routes/messageRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 // const path = require("path");
 import cookieParser from "cookie-parser";
 import connectToMongoDB from "./db/connectMongoDB.js";
@@ -25,10 +27,12 @@ dotenv.config();
 app.use(express.json());
 
 // parse cookies
-app.use(cookieParser(process.env.COOKIE_SECRET));
+app.use(cookieParser());
 
 // routing setup
 app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
+app.use("/api/users", userRoutes);
 // app.get("/", (req, res) => {
 //   res.send("Hello World!");
 // });
