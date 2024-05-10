@@ -1,11 +1,12 @@
 import React from "react";
-import ChatNav from "./chat-nav";
+
 import Chat from "./chat";
 import ChatInput from "./chat-input";
+import ChatNav from "./chat-nav";
 
 const ChatContainer = () => {
   return (
-    <div className="size-full flex flex-col pb-4">
+    <div className="flex size-full flex-col pb-4">
       <ChatNav />
       <Chat />
       <ChatInput />

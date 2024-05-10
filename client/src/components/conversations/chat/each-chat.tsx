@@ -6,7 +6,7 @@ const EachChat = () => {
       <div className="chat-header"></div>
       <div className="chat-bubble chat-bubble-primary rounded-btn">
         Hey Mark!! Stop stealing my data!!
-        <time className="text-xs opacity-50 flex flex-col items-end">
+        <time className="flex flex-col items-end text-xs opacity-50">
           1 hour ago
         </time>
       </div>

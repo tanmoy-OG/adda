@@ -1,31 +1,43 @@
+"use client";
+import { useRouter } from "next/navigation";
 import { FC } from "react";
-import LogIn from "components/sign-in/log-in";
-import SignUp from "components/sign-in/sign-up";
+
+import { useAuthContext } from "@/context/auth-context";
+import LogIn from "@/sign-in/log-in";
+import SignUp from "@/sign-in/sign-up";
 
 const SignIn: FC = () => {
+  const { authUser } = useAuthContext();
+  const router = useRouter();
+
+  if (authUser) {
+    router.push("/");
+    return null;
+  }
+
   return (
-    <div className="flex absolute w-full top-1/4 flex-col justify-center">
-      <div role="tablist" className="tabs tabs-lifted mx-auto">
+    <div className="absolute top-1/4 flex w-full flex-col justify-center">
+      <div className="tabs tabs-lifted mx-auto" role="tablist">
         <input
-          type="radio"
+          defaultChecked
+          aria-label="Log In"
+          className="tab [--tab-bg:#EBEBEB] [--tab-border:0px] [--tab-corner-bg:#EBEBEB]"
           name="my_tabs_2"
           role="tab"
-          className="tab [--tab-bg:#EBEBEB] [--tab-border:0px] [--tab-corner-bg:#EBEBEB]"
-          aria-label="Log In"
-          defaultChecked
+          type="radio"
         />
-        <div role="tabpanel" className="tab-content rounded-box bg-neutral">
+        <div className="tab-content rounded-box bg-neutral" role="tabpanel">
           <LogIn />
         </div>
 
         <input
-          type="radio"
+          aria-label="Sign Up"
+          className="tab [--tab-bg:#EBEBEB] [--tab-border:0px] [--tab-corner-bg:#EBEBEB]"
           name="my_tabs_2"
           role="tab"
-          className="tab [--tab-bg:#EBEBEB] [--tab-border:0px] [--tab-corner-bg:#EBEBEB]"
-          aria-label="Sign Up"
+          type="radio"
         />
-        <div role="tabpanel" className="tab-content bg-neutral rounded-box">
+        <div className="tab-content rounded-box bg-neutral" role="tabpanel">
           <SignUp />
         </div>
       </div>

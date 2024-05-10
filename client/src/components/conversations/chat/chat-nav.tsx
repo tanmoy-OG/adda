@@ -2,28 +2,28 @@ import { FC } from "react";
 
 const ChatNav: FC = () => {
   return (
-    <div className="navbar hover:cursor-default pl-10 flex justify-between shadow-lg">
-      <div className="text-center font-semibold text-xl">Mark Suckerberg</div>
+    <div className="navbar flex justify-between pl-10 shadow-lg hover:cursor-default">
+      <div className="text-center text-xl font-semibold">Mark Suckerberg</div>
       <details className="dropdown dropdown-end">
         <summary className="btn btn-ghost size-10 min-h-0 p-2">
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
+            className="lucide lucide-ellipsis-vertical"
             fill="none"
+            height="24"
             stroke="currentColor"
-            stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            className="lucide lucide-ellipsis-vertical"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <circle cx="12" cy="12" r="1" />
             <circle cx="12" cy="5" r="1" />
             <circle cx="12" cy="19" r="1" />
           </svg>
         </summary>
-        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+        <ul className="menu dropdown-content rounded-box bg-base-100 z-[1] w-52 p-2 shadow">
           <li>
             <a>Item 1</a>
           </li>

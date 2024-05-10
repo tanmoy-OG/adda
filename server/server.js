@@ -6,12 +6,14 @@ import userRoutes from "./routes/userRoutes.js";
 // const path = require("path");
 import cookieParser from "cookie-parser";
 import connectToMongoDB from "./db/connectMongoDB.js";
+import cors from "cors";
 // const loginRouter = require("./router/loginRouter");
 // const usersRouter = require("./router/usersRouter");
 // const inboxRouter = require("./router/inboxRouter");
 
 const app = express();
 
+app.use(cors());
 dotenv.config();
 
 // database connection
