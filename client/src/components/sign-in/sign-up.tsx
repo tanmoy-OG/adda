@@ -45,7 +45,6 @@ const SignUp: FC = () => {
             <path d="M21 9v6" />
           </svg>
           <input
-            required
             className="grow"
             placeholder="Display Name"
             type="text"
@@ -70,7 +69,6 @@ const SignUp: FC = () => {
             <circle cx="12" cy="7" r="4" />
           </svg>
           <input
-            required
             className="grow"
             placeholder="Username"
             type="text"
@@ -95,7 +93,6 @@ const SignUp: FC = () => {
             <circle cx="16.5" cy="7.5" fill="currentColor" r=".5" />
           </svg>
           <input
-            required
             className="grow"
             placeholder="Password"
             type="password"
@@ -120,7 +117,6 @@ const SignUp: FC = () => {
             <circle cx="16.5" cy="7.5" fill="currentColor" r=".5" />
           </svg>
           <input
-            required
             className="grow"
             placeholder="Confirm Password"
             type="password"
@@ -129,7 +125,6 @@ const SignUp: FC = () => {
           />
         </label>
         <select
-          required
           className="select select-bordered w-full max-w-xs"
           value={inputs.gender}
           onChange={(e) => setInputs({ ...inputs, gender: e.target.value })}

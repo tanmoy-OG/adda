@@ -1,5 +1,6 @@
 import { useAuthContext } from "context/auth-context";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const useLogout = () => {
   const [loading, setLoading] = useState(false);
@@ -16,11 +17,14 @@ const useLogout = () => {
       if (data.error) {
         throw new Error(data.error);
       }
+      // console.log("data", data);
 
       localStorage.removeItem("chat-user");
       setAuthUser(null);
-    } catch (error) {
-      console.error(error);
+      toast.success("Logged out successfully");
+      // console.log("setAuthUser Done");
+    } catch (error: any) {
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }

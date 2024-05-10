@@ -1,15 +1,12 @@
-import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 import { useAuthContext } from "@/context/auth-context";
 
-// import toast from "react-hot-toast";
-
 const useSignup = () => {
   const [loading, setLoading] = useState(false);
-  const { setAuthUser } = useAuthContext();
+  const { setAuthUser }: any = useAuthContext();
   // console.log("CHECK");
-  const router = useRouter();
 
   const signup = async ({ name, username, pass, confPass, gender }: any) => {
     const success = handleInputErrors({
@@ -20,7 +17,7 @@ const useSignup = () => {
       gender,
     });
     if (!success) {
-      console.log("not success");
+      // console.log("not success");
       return;
     }
     setLoading(true);
@@ -41,12 +38,14 @@ const useSignup = () => {
       if (data.error) {
         throw new Error(data.error);
       }
-      console.log("data", data);
+      // console.log("data", data);
+
       localStorage.setItem("chat-user", JSON.stringify(data));
       setAuthUser(data);
-      console.log("setAuthUser Done");
-    } catch (error) {
-      // toast.error(error.message);
+      toast.success("Signed up successfully");
+      // console.log("setAuthUser Done");
+    } catch (error: any) {
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }
@@ -58,20 +57,20 @@ export default useSignup;
 
 function handleInputErrors({ name, username, pass, confPass, gender }: any) {
   if (!name || !username || !pass || !confPass || !gender) {
-    // toast.error("Please fill in all fields");
-    console.log(gender);
+    toast.error("Please fill in all fields");
+    // console.log(gender);
     return false;
   }
 
   if (pass !== confPass) {
-    // toast.error("Passwords do not match");
+    toast.error("Passwords do not match");
     return false;
   }
 
-  // if (pass.length < 6) {
-  // toast.error("Password must be at least 6 characters");
-  //   return false;
-  // }
+  if (pass.length < 6) {
+    toast.error("Password must be at least 6 characters");
+    return false;
+  }
 
   return true;
 }
