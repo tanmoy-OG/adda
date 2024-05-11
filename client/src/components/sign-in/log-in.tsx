@@ -1,6 +1,6 @@
 import { FC, FormEvent, useState } from "react";
 
-import useLogin from "@/hooks/useLogin";
+import useLogin from "@/hooks/use-login";
 import PasswordSvg from "@/icons/password-svg";
 import UsernameSvg from "@/icons/username-svg";
 
@@ -45,7 +45,7 @@ const LogIn: FC = () => {
           />
         </label>
         <div className="card-actions">
-          <button className="btn btn-primary" type="submit">
+          <button className="btn btn-primary" disabled={loading} type="submit">
             {loading ? (
               <span className="loading loading-spinner text-primary"></span>
             ) : (

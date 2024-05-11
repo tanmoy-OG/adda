@@ -1,7 +1,7 @@
 "use client";
 import { FC, FormEvent, useState } from "react";
 
-import useSignup from "@/hooks/useSignup";
+import useSignup from "@/hooks/use-signup";
 import NameSvg from "@/icons/name-svg";
 import PasswordSvg from "@/icons/password-svg";
 import UsernameSvg from "@/icons/username-svg";

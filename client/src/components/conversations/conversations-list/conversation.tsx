@@ -1,17 +1,33 @@
+import Image from "next/image";
 import { FC } from "react";
 
-const Conversation: FC = () => {
+import useConversation from "@/global/use-conversation-zustand";
+
+const Conversation: FC = ({ conversation }: any) => {
+  const { selectedConversation, setSelectedConversation }: any =
+    useConversation();
+
+  const isSelected = selectedConversation?._id === conversation._id;
+
   return (
-    <div className="card card-side rounded-btn bg-base-100 w-full">
+    <div
+      className={`card card-side rounded-btn w-full${isSelected ? "bg-primary" : "bg-base-100"}`}
+      onClick={() => setSelectedConversation(conversation)}
+    >
       <figure className="h-20">
         <div className="avatar online m-4 size-12">
           <div className="rounded-full">
-            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            <Image
+              alt="avatar"
+              height={48}
+              src={conversation.profilePic}
+              width={48}
+            />
           </div>
         </div>
       </figure>
       <div className="card-body h-20 p-4 pl-0">
-        <h2 className="card-title text-sm">Tanmoy_OG</h2>
+        <h2 className="card-title text-sm">{conversation.name}</h2>
         <p></p>
       </div>
     </div>

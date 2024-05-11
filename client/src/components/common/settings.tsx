@@ -1,6 +1,6 @@
 import React from "react";
 
-import useLogout from "@/hooks/useLogout";
+import useLogout from "@/hooks/use-logout";
 import LogoutSvg from "@/icons/logout-svg";
 
 const Settings = () => {
@@ -16,7 +16,7 @@ const Settings = () => {
           <a>Item 1</a>
         </li>
         <li>
-          <button className="btn" onClick={logout}>
+          <button className="btn" disabled={loading} onClick={logout}>
             {loading ? (
               <span className="loading loading-spinner text-primary"></span>
             ) : (

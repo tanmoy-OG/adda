@@ -1,15 +1,32 @@
-import React from "react";
+import { useEffect } from "react";
 
 import Chat from "./chat";
 import ChatInput from "./chat-input";
 import ChatNav from "./chat-nav";
+import NoChat from "./no-chat";
+
+import useConversation from "@/global/use-conversation-zustand";
 
 const ChatContainer = () => {
+  const { selectedConversation, setSelectedConversation }: any =
+    useConversation();
+
+  useEffect(() => {
+    // cleanup function (unmounts)
+    return () => setSelectedConversation(null);
+  }, [setSelectedConversation]);
+
   return (
     <div className="flex size-full flex-col pb-4">
-      <ChatNav />
-      <Chat />
-      <ChatInput />
+      {!selectedConversation ? (
+        <NoChat />
+      ) : (
+        <>
+          <ChatNav />
+          <Chat />
+          <ChatInput />
+        </>
+      )}
     </div>
   );
 };

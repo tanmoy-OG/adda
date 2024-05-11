@@ -1,9 +1,15 @@
 import { FC } from "react";
 
+import useConversation from "@/global/use-conversation-zustand";
+
 const ChatNav: FC = () => {
+  const { selectedConversation }: any = useConversation();
+
   return (
     <div className="navbar flex justify-between pl-10 shadow-lg hover:cursor-default">
-      <div className="text-center text-xl font-semibold">Mark Suckerberg</div>
+      <div className="text-center text-xl font-semibold">
+        {selectedConversation.name}
+      </div>
       <details className="dropdown dropdown-end">
         <summary className="btn btn-ghost size-10 min-h-0 p-2">
           <svg

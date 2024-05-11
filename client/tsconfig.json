@@ -39,6 +39,7 @@
       "@/ui/*": ["components/ui/*"],
       // "@/components/*": ["components/*"],
       "@/context/*": ["context/*"],
+      "@/global/*": ["global/*"],
       "@/hooks/*": ["hooks/*"],
       "@/lib/*": ["lib/*"],
       "@/utils/*": ["utils/*"],
@@ -51,7 +52,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/hooks/useSignup.ts"
+    "src/hooks/use-signup.ts"
   ],
   "exclude": ["node_modules"]
 }
