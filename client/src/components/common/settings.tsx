@@ -17,7 +17,11 @@ const Settings = () => {
         </li>
         <li>
           <button className="btn" onClick={logout}>
-            Log Out
+            {loading ? (
+              <span className="loading loading-spinner text-primary"></span>
+            ) : (
+              "Log Out"
+            )}
           </button>
         </li>
       </ul>
