@@ -2,7 +2,7 @@ import { FC } from "react";
 
 const AddFriendBtn: FC = () => {
   return (
-    <button className="btn btn-primary btn-sm h-10 w-full">
+    <button className="btn btn-disabled btn-sm h-10 w-full">
       <svg
         className="lucide lucide-user-plus size-4"
         fill="none"

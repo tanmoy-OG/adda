@@ -11,7 +11,7 @@ const Conversation: FC = ({ conversation }: any) => {
 
   return (
     <div
-      className={`card card-side rounded-btn w-full${isSelected ? "bg-primary" : "bg-base-100"}`}
+      className={`card card-side rounded-btn w-full hover:cursor-pointer ${isSelected ? "bg-primary" : "bg-base-100"}`}
       onClick={() => setSelectedConversation(conversation)}
     >
       <figure className="h-20">

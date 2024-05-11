@@ -11,19 +11,19 @@ const Sidebar: FC = () => {
   return (
     <div className="flex h-full flex-col gap-4 pt-4">
       <div className="flex flex-col gap-4">
-        <button className="btn size-10 min-h-0 self-end bg-white p-2">
+        <button className="btn btn-ghost size-10 min-h-0 self-end p-2">
           <MessageSvg />
         </button>
-        <button className="btn size-10 min-h-0 self-end bg-white p-2">
+        <button className="btn btn-ghost size-10 min-h-0 self-end p-2">
           <BroadcastSvg />
         </button>
         {/* <div className="divider"></div> */}
       </div>
       <div className="mt-auto flex flex-col gap-4">
-        <button className="btn size-10 min-h-0 self-end bg-white p-2">
+        <button className="btn btn-ghost size-10 min-h-0 self-end p-2">
           <VideoCallSvg />
         </button>
-        <button className="btn size-10 min-h-0 self-end bg-white p-2">
+        <button className="btn btn-ghost size-10 min-h-0 self-end p-2">
           <VoiceCallSvg />
         </button>
         <Settings />
