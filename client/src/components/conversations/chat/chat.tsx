@@ -1,3 +1,4 @@
+import MessageSkeleton from "components/skeletons/message-skeleton";
 import { FC, useEffect, useRef } from "react";
 
 import EachChat from "./each-chat";
@@ -23,6 +24,8 @@ const Chat: FC = () => {
             <EachChat message={message} />
           </div>
         ))}
+
+      {loading && [...Array(2)].map((_, idx) => <MessageSkeleton key={idx} />)}
 
       {!loading && messages.length === 0 && (
         <div className="flex size-full flex-col justify-center">
