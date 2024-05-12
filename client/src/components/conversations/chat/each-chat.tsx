@@ -1,9 +1,9 @@
 import { useAuthContext } from "@/context/auth-context";
-import useConversation from "@/global/use-conversation-zustand";
+import { extractTime } from "@/utils/extract-time";
 
 const EachChat = ({ message }: any) => {
   const { authUser }: any = useAuthContext();
-  const { selectedConversation }: any = useConversation();
+  const formattedTime = extractTime(message.createdAt);
   const fromMe = message.senderId === authUser._id;
   const chatPos = fromMe ? "chat-end" : "chat-start";
   const bubbleBgColor = fromMe ? "chat-bubble-primary" : "";
@@ -14,10 +14,10 @@ const EachChat = ({ message }: any) => {
       <div className={`chat-bubble rounded-btn ${bubbleBgColor}`}>
         {message.message}
         <time className="flex flex-col items-end text-xs opacity-50">
-          {message.createdAt}
+          {formattedTime}
         </time>
       </div>
-      <div className="chat-footer opacity-50">Delivered</div>
+      {/* <div className="chat-footer opacity-50">Delivered</div> */}
     </div>
   );
 };
