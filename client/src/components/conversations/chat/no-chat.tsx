@@ -15,7 +15,7 @@ const NoChat = () => {
         </h1>
         <h1 className="text-center text-3xl font-medium">
           Select a chat to start{" "}
-          <span className="text-primary font-semibold">Addaa!!</span>
+          <span className="text-primary font-semibold">Addaa!!</span> ☕
         </h1>
       </div>
     </div>
