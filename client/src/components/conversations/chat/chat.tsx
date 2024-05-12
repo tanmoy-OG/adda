@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useRef } from "react";
 
 import EachChat from "./each-chat";
 
@@ -6,13 +6,22 @@ import useGetMessages from "@/hooks/use-get-messages";
 
 const Chat: FC = () => {
   const { messages, loading } = useGetMessages();
+  const lastMessageRef = useRef<any>();
+
+  useEffect(() => {
+    setTimeout(() => {
+      lastMessageRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  }, [messages]);
 
   return (
     <div className="size-full overflow-auto p-4">
       {!loading &&
         messages.length > 0 &&
         messages.map((message: any) => (
-          <EachChat key={message._id} message={message} />
+          <div key={message._id} ref={lastMessageRef}>
+            <EachChat message={message} />
+          </div>
         ))}
 
       {!loading && messages.length === 0 && (
