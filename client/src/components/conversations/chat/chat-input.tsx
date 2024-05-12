@@ -1,29 +1,34 @@
-import { FC } from "react";
+import { FC, useState } from "react";
+
+import useSendMessage from "@/hooks/use-send-message";
+import SendSvg from "@/icons/send-svg";
 
 const ChatInput: FC = () => {
+  const [message, setMessage] = useState("");
+  const { loading, sendMessage } = useSendMessage();
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    if (!message) return;
+    await sendMessage(message);
+    setMessage("");
+  };
+
   return (
-    <form action="" className="form-control mt-auto px-4">
+    <form className="form-control mt-auto px-4" onSubmit={handleSubmit}>
       <div className="flex w-full gap-4">
         <textarea
           className="textarea bg-neutral w-full resize-y text-sm "
           placeholder="Message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
         ></textarea>
         <button className="btn btn-primary size-10 min-h-0 self-end p-2">
-          <svg
-            className="lucide lucide-send"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="m22 2-7 20-4-9-9-4Z" />
-            <path d="M22 2 11 13" />
-          </svg>
+          {loading ? (
+            <div className="loading loading-spinner"></div>
+          ) : (
+            <SendSvg />
+          )}
         </button>
       </div>
     </form>
