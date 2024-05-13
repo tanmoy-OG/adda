@@ -26,9 +26,10 @@ const Conversation: FC = ({ conversation }: any) => {
           </div>
         </div>
       </figure>
-      <div className="card-body h-20 p-4 pl-0">
+      <div className="card-body h-20 gap-0 p-4 pl-0">
         <h2 className="card-title text-sm">{conversation.name}</h2>
-        <p></p>
+        <p className="text-xs">@{conversation.username}</p>
+        <p className="text-xs"></p>
       </div>
     </div>
   );
