@@ -25,6 +25,7 @@
       "@/animation/*": ["animation/*"],
       "@/companies/*": ["assets/companies/*"],
       "@/icons/*": ["assets/icons/*"],
+      "@/sounds/*": ["assets/sounds/*"],
       "@/projects/*": ["assets/projects/*"],
       "@/assets/*": ["assets/*"],
       "@/broadcasts/*": ["components/broadcasts/*"],
