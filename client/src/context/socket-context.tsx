@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { io } from "socket.io-client";
 
 import { useAuthContext } from "./auth-context";
@@ -8,7 +8,11 @@ interface SocketContextProviderProps {
   children: React.ReactNode;
 }
 
-export const SocketContext = createContext({});
+const SocketContext = createContext({});
+
+export const useSocketContext = () => {
+  return useContext(SocketContext);
+};
 
 export const SocketContextProvider = ({
   children,
@@ -19,9 +23,18 @@ export const SocketContextProvider = ({
 
   useEffect((): any => {
     if (authUser) {
-      const socket = io("http://localhost:5000");
+      const socket = io("http://localhost:5000", {
+        query: {
+          userId: authUser._id,
+        },
+      });
 
       setSocket(socket);
+
+      // socket.on() is used to listen to the events. can be used both on client and server side
+      socket.on("getOnlineUsers", (users) => {
+        setOnlineUsers(users);
+      });
 
       return () => socket.close();
     } else {
@@ -30,7 +43,7 @@ export const SocketContextProvider = ({
         setSocket(null);
       }
     }
-  }, []);
+  }, [authUser]);
 
   return (
     <SocketContext.Provider value={{ socket, onlineUsers }}>

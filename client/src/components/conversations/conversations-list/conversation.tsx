@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FC } from "react";
 
+import { useSocketContext } from "@/context/socket-context";
 import useConversation from "@/global/use-conversation-zustand";
 
 const Conversation: FC = ({ conversation }: any) => {
@@ -8,6 +9,8 @@ const Conversation: FC = ({ conversation }: any) => {
     useConversation();
 
   const isSelected = selectedConversation?._id === conversation._id;
+  const { onlineUsers }: any = useSocketContext();
+  const isOnline = onlineUsers.includes(conversation._id);
 
   return (
     <div
@@ -15,7 +18,9 @@ const Conversation: FC = ({ conversation }: any) => {
       onClick={() => setSelectedConversation(conversation)}
     >
       <figure className="h-20">
-        <div className="avatar online m-4 size-12">
+        <div
+          className={`avatar m-4 size-12 ${isOnline ? "online" : "offline"}`}
+        >
           <div className="rounded-full">
             <Image
               alt="avatar"
