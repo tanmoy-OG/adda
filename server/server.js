@@ -6,14 +6,13 @@ import userRoutes from "./routes/userRoutes.js";
 // const path = require("path");
 import cookieParser from "cookie-parser";
 import connectToMongoDB from "./db/connectMongoDB.js";
-import cors from "cors";
+// import cors from "cors";
+import { app, server } from "./socket/socket.js";
 // const loginRouter = require("./router/loginRouter");
 // const usersRouter = require("./router/usersRouter");
 // const inboxRouter = require("./router/inboxRouter");
 
-const app = express();
-
-app.use(cors());
+// app.use(cors());
 dotenv.config();
 
 // database connection
@@ -39,7 +38,7 @@ app.use("/api/users", userRoutes);
 //   res.send("Hello World!");
 // });
 
-app.listen(process.env.PORT, () => {
+server.listen(process.env.PORT, () => {
   connectToMongoDB();
   console.log(`app listening to port ${process.env.PORT}`);
 });

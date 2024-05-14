@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 
 import "./globals.css";
 import NavBar from "@/common/nav-bar";
+import { SocketContextProvider } from "@/context/socket-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,10 @@ const RootLayout = ({
     <html lang="en">
       <body className={inter.className}>
         <AuthContextProvider>
-          <NavBar />
-          {children}
+          <SocketContextProvider>
+            <NavBar />
+            {children}
+          </SocketContextProvider>
         </AuthContextProvider>
         <Toaster />
       </body>
