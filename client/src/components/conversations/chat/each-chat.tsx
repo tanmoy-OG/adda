@@ -7,11 +7,14 @@ const EachChat = ({ message }: any) => {
   const fromMe = message.senderId === authUser._id;
   const chatPos = fromMe ? "chat-end" : "chat-start";
   const bubbleBgColor = fromMe ? "chat-bubble-primary" : "";
+  const shake = message.shake ? "shake" : "";
 
   return (
     <div className={`chat  ${chatPos}`}>
       <div className="chat-header"></div>
-      <div className={`chat-bubble rounded-btn ${bubbleBgColor}`}>
+      <div
+        className={`chat-bubble rounded-btn transition-all ${bubbleBgColor} ${shake}`}
+      >
         {message.message}
         <time className="flex flex-col items-end text-xs opacity-50">
           {formattedTime}

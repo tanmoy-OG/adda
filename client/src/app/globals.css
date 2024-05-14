@@ -31,3 +31,18 @@ body {
     text-wrap: balance;
   }
 } */
+
+.shake {
+  animation: shakeAnimation 0.3s 0.3s alternate;
+  /* adjust animation timing as per your preference */
+}
+
+@keyframes shakeAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.07);
+    /* adjust scale factor as per your preference */
+  }
+}
