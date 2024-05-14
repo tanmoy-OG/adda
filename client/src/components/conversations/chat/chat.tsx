@@ -4,9 +4,11 @@ import { FC, useEffect, useRef } from "react";
 import EachChat from "./each-chat";
 
 import useGetMessages from "@/hooks/use-get-messages";
+import useListenMessages from "@/hooks/use-listen-messages";
 
 const Chat: FC = () => {
   const { messages, loading } = useGetMessages();
+  useListenMessages();
   const lastMessageRef = useRef<any>();
 
   useEffect(() => {
