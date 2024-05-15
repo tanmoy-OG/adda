@@ -6,7 +6,7 @@ const ChatNav: FC = () => {
   const { selectedConversation }: any = useConversation();
 
   return (
-    <div className="navbar z-10 flex justify-between pl-10 shadow-lg hover:cursor-default">
+    <div className="navbar z-10 flex justify-between pl-10 shadow hover:cursor-default">
       <div className="text-center text-xl font-semibold">
         {selectedConversation.name}
       </div>

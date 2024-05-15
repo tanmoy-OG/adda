@@ -11,12 +11,12 @@ const Settings = () => {
       <summary className="btn btn-ghost size-10 min-h-0 p-2">
         <LogoutSvg />
       </summary>
-      <ul className="menu dropdown-content rounded-box bg-base-100 z-[1] w-52 p-2 shadow">
+      <ul className="menu dropdown-content rounded-btn bg-base-100 z-[1] w-48 p-2 shadow">
         <li>
           <a>Item 1</a>
         </li>
         <li>
-          <button className="btn" disabled={loading} onClick={logout}>
+          <button className="btn btn-sm" disabled={loading} onClick={logout}>
             {loading ? (
               <span className="loading loading-spinner text-primary"></span>
             ) : (
