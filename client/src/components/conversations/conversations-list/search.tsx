@@ -4,7 +4,7 @@ import SearchSvg from "@/icons/search-svg";
 
 const Search: FC = ({ setSearch }: any) => {
   return (
-    <label className="input input-bordered flex min-h-10 w-full items-center gap-2">
+    <label className="input input-bordered flex  w-full items-center gap-2">
       <SearchSvg />
       <input
         className="w-full grow"

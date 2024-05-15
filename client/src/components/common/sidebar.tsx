@@ -2,6 +2,7 @@ import { FC } from "react";
 
 import Settings from "./settings";
 
+import AddFriendSvg from "@/icons/add-friend-svg";
 import BroadcastSvg from "@/icons/broadcast-svg";
 import MessageSvg from "@/icons/message-svg";
 import VideoCallSvg from "@/icons/video-call-svg";
@@ -16,6 +17,9 @@ const Sidebar: FC = () => {
         </button>
         <button className="btn btn-ghost size-10 min-h-0 self-end p-2">
           <BroadcastSvg />
+        </button>
+        <button className="btn btn-ghost size-10 min-h-0 self-end p-2">
+          <AddFriendSvg />
         </button>
         {/* <div className="divider"></div> */}
       </div>

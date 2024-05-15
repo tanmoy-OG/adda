@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { FC, useState } from "react";
 
-import AddFriendBtn from "./add-friend-btn";
+import AddFriendBtn from "../../../assets/icons/add-friend-svg";
+
 import Conversation from "./conversation";
 import Search from "./search";
 
@@ -33,7 +34,6 @@ const Conversations: FC = () => {
       </div>
       <div className="mr-4">
         <Search setSearch={setSearch} />
-        <AddFriendBtn />
       </div>
       <div className="flex h-full flex-col gap-4 overflow-y-auto pr-4">
         {conversations
