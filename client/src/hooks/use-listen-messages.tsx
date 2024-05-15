@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import toast from "react-hot-toast";
 
 import { useSocketContext } from "@/context/socket-context";
 import useConversation from "@/global/use-conversation-zustand";
@@ -6,14 +7,27 @@ import notificationSound from "@/sounds/notification-sound.mp3";
 
 const useListenMessages = () => {
   const { socket }: any = useSocketContext();
-  const { selectedConversation, messages, setMessages }: any = useConversation();
+  const { selectedConversation, messages, setMessages }: any =
+    useConversation();
 
   useEffect(() => {
     socket?.on("newMessage", (newMessage: any) => {
       newMessage.shake = true;
       const audio = new Audio(notificationSound);
       audio.play();
-      setMessages([...messages, newMessage]);
+
+      if (
+        newMessage.senderId === selectedConversation?._id
+      ) {
+        setMessages([...messages, newMessage]);
+      } else {
+        toast(() => (
+          <div>
+            <h1 className="mb-2 text-lg font-semibold">{newMessage.name}</h1>
+            <p>{newMessage.message}</p>
+          </div>
+        ));
+      }
     });
 
     return () => socket?.off("newMessage");

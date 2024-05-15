@@ -1,10 +1,12 @@
 import React from "react";
 
 import { useAuthContext } from "@/context/auth-context";
+import useListenMessages from "@/hooks/use-listen-messages";
 import EmptyMessageSvg from "@/icons/empty-message-svg";
 
 const NoChat = () => {
   const { authUser }: any = useAuthContext();
+  useListenMessages();
 
   return (
     <div className="flex size-full flex-col justify-center gap-6">

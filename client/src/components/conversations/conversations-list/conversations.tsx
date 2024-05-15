@@ -27,7 +27,7 @@ const Conversations: FC = () => {
           </div>
         </div>
         <div className="my-auto flex flex-col pr-4">
-          <h2 className="text-lg">{authUser.name}</h2>
+          <h2 className="text-lg font-semibold">{authUser.name}</h2>
           <p className="text-xs">@{authUser.username}</p>
         </div>
       </div>
