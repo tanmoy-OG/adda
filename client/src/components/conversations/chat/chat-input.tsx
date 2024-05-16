@@ -33,12 +33,11 @@ const ChatInput = () => {
           placeholder="Message"
           rows={1}
           value={message}
-          // onChange={(e) => setMessage(e.target.value)}
           onChange={handleChange}
         ></textarea>
         <button className="btn btn-accent hover:bg-info group size-10 min-h-0 self-end overflow-hidden p-2">
           {loading ? (
-            <div className="loading loading-spinner"></div>
+            <div className="loading loading-spinner text-info"></div>
           ) : (
             <SendSvg />
           )}
