@@ -1,12 +1,12 @@
 import MessageSkeleton from "components/skeletons/message-skeleton";
-import { FC, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import EachChat from "./each-chat";
 
 import useGetMessages from "@/hooks/use-get-messages";
 import useListenMessages from "@/hooks/use-listen-messages";
 
-const Chat: FC = () => {
+const Chat = () => {
   const { messages, loading } = useGetMessages();
   useListenMessages();
   const lastMessageRef = useRef<any>();
@@ -31,9 +31,9 @@ const Chat: FC = () => {
 
       {!loading && messages.length === 0 && (
         <div className="flex size-full flex-col justify-center">
-          <p className="text-center">
+          <p className="text-center text-xl font-medium">
             Send a message to start{" "}
-            <span className="text-primary font-semibold">Addaa!!</span> ☕
+            <span className="text-accent font-semibold">Addaa!!</span> ☕
           </p>
         </div>
       )}

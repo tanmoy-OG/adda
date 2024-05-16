@@ -6,7 +6,7 @@ const EachChat = ({ message }: any) => {
   const formattedTime = extractTime(message.createdAt);
   const fromMe = message.senderId === authUser._id;
   const chatPos = fromMe ? "chat-end" : "chat-start";
-  const bubbleBgColor = fromMe ? "chat-bubble-primary" : "";
+  const bubbleBgColor = fromMe ? "chat-bubble-warning" : "chat-bubble-neutral";
   const shake = message.shake ? "shake" : "";
 
   return (

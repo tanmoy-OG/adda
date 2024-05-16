@@ -21,8 +21,9 @@ const config: Config = {
           neutral: "#EBEBEB",
           "base-100": "#ffffff",
           info: "#F6D9D0",
+          chatsend: "#F3E3F5",
           success: "#66CC8A",
-          warning: "#FFB86C",
+          warning: "#F3E3F5",
           error: "#E96D7B",
         },
         sunset: {
