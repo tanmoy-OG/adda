@@ -13,7 +13,7 @@ const EachChat = ({ message }: any) => {
     <div className={`chat  ${chatPos}`}>
       <div className="chat-header"></div>
       <div
-        className={`chat-bubble rounded-btn transition-all ${bubbleBgColor} ${shake}`}
+        className={`chat-bubble rounded-btn text-sm transition-all ${bubbleBgColor} ${shake}`}
       >
         {message.message}
         <time className="flex flex-col items-end text-xs opacity-50">

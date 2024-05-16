@@ -36,7 +36,7 @@ const ChatInput = () => {
           // onChange={(e) => setMessage(e.target.value)}
           onChange={handleChange}
         ></textarea>
-        <button className="btn btn-primary size-10 min-h-0 self-end p-2">
+        <button className="btn btn-accent hover:bg-info group size-10 min-h-0 self-end overflow-hidden p-2">
           {loading ? (
             <div className="loading loading-spinner"></div>
           ) : (

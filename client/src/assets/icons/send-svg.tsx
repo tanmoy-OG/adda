@@ -1,9 +1,7 @@
-import React from "react";
-
 const SendSvg = () => {
   return (
     <svg
-      className="lucide lucide-send"
+      className="lucide lucide-send -translate-x-1 rotate-45 transition-all group-hover:translate-x-0 group-hover:rotate-0 group-hover:scale-110 group-active:-translate-y-10 group-active:translate-x-10 group-active:ease-in"
       fill="none"
       height="24"
       stroke="currentColor"
