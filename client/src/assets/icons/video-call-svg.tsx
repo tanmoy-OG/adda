@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const VideoCallSvg: FC = () => {
+const VideoCallSvg = () => {
   return (
     <svg
       className="lucide lucide-video"

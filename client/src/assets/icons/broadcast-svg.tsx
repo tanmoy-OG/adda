@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const BroadcastSvg: FC = () => {
+const BroadcastSvg = () => {
   return (
     <svg
       className="lucide lucide-radio"

@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const NameSvg: FC = () => {
+const NameSvg = () => {
   return (
     <svg
       className="lucide lucide-case-sensitive opacity-70"

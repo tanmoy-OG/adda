@@ -32,6 +32,7 @@ body {
   }
 } */
 
+/* -- new message shaking animation -- */
 .shake {
   animation: shakeAnimation 0.3s 0.3s alternate;
   /* adjust animation timing as per your preference */

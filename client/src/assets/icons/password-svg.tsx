@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const PasswordSvg: FC = () => {
+const PasswordSvg = () => {
   return (
     <svg
       className="lucide lucide-key-round opacity-70"

@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const VoiceCallSvg: FC = () => {
+const VoiceCallSvg = () => {
   return (
     <svg
       className="lucide lucide-phone"

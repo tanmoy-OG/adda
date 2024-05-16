@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const MessageSvg: FC = () => {
+const MessageSvg = () => {
   return (
     <svg
       className="lucide lucide-message-square"

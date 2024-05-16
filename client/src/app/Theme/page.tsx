@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const Theme: FC = () => {
+const Theme = () => {
   return (
     <div className="card bg-base-100 w-96 shadow-xl">
       <div className="card-body items-center text-center">

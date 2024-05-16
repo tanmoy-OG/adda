@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const AddFriendSvg: FC = () => {
+const AddFriendSvg = () => {
   return (
     <svg
       className="lucide lucide-user-plus"
