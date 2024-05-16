@@ -1,11 +1,21 @@
-import { FC, useState } from "react";
+import { useRef, useState } from "react";
 
+import useAutosizeTextArea from "@/hooks/use-autosize-textarea";
 import useSendMessage from "@/hooks/use-send-message";
 import SendSvg from "@/icons/send-svg";
 
-const ChatInput: FC = () => {
+const ChatInput = () => {
   const [message, setMessage] = useState("");
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const { loading, sendMessage } = useSendMessage();
+
+  useAutosizeTextArea(textAreaRef.current, message);
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const val = e.target?.value;
+
+    setMessage(val);
+  };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -18,10 +28,13 @@ const ChatInput: FC = () => {
     <form className="form-control mt-auto px-4" onSubmit={handleSubmit}>
       <div className="flex w-full gap-4">
         <textarea
-          className="textarea bg-neutral w-full resize-y text-sm "
+          ref={textAreaRef}
+          className="textarea bg-neutral w-full resize-none text-sm focus:outline-none"
           placeholder="Message"
+          rows={1}
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          // onChange={(e) => setMessage(e.target.value)}
+          onChange={handleChange}
         ></textarea>
         <button className="btn btn-primary size-10 min-h-0 self-end p-2">
           {loading ? (
