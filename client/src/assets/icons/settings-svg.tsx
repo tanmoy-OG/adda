@@ -1,9 +1,7 @@
-import { FC } from "react";
-
-const LogoutSvg: FC = () => {
+const SettingsSvg = () => {
   return (
     <svg
-      className="lucide lucide-settings"
+      className="lucide lucide-settings transition-all group-hover:-rotate-12 group-hover:scale-110"
       fill="none"
       height="24"
       stroke="currentColor"
@@ -20,4 +18,4 @@ const LogoutSvg: FC = () => {
   );
 };
 
-export default LogoutSvg;
+export default SettingsSvg;

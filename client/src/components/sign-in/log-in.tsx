@@ -1,10 +1,10 @@
-import { FC, FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 
 import useLogin from "@/hooks/use-login";
 import PasswordSvg from "@/icons/password-svg";
 import UsernameSvg from "@/icons/username-svg";
 
-const LogIn: FC = () => {
+const LogIn = () => {
   const [inputs, setInputs] = useState({
     username: "",
     pass: "",
@@ -24,7 +24,7 @@ const LogIn: FC = () => {
         className="card-body items-center text-center"
         onSubmit={handleSubmit}
       >
-        <label className="input input-bordered flex items-center gap-2">
+        <label className="input input-bordered input-primary flex items-center gap-2">
           <UsernameSvg />
           <input
             className="grow"
@@ -34,7 +34,7 @@ const LogIn: FC = () => {
             onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
           />
         </label>
-        <label className="input input-bordered flex items-center gap-2">
+        <label className="input input-bordered input-primary mb-4 flex items-center gap-2">
           <PasswordSvg />
           <input
             className="grow"
@@ -44,10 +44,14 @@ const LogIn: FC = () => {
             onChange={(e) => setInputs({ ...inputs, pass: e.target.value })}
           />
         </label>
-        <div className="card-actions">
-          <button className="btn btn-primary" disabled={loading} type="submit">
+        <div className="card-actions w-full">
+          <button
+            className="btn btn-primary text-base-100 mx-auto w-1/3"
+            disabled={loading}
+            type="submit"
+          >
             {loading ? (
-              <span className="loading loading-spinner text-primary"></span>
+              <span className="loading loading-spinner text-info"></span>
             ) : (
               "Log In"
             )}

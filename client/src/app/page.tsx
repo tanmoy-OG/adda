@@ -15,7 +15,7 @@ const Home = () => {
     return null;
   }
   return (
-    <main className="bg-primary absolute bottom-0 top-16 flex w-full items-start justify-between gap-6 px-6 pb-6">
+    <main className="from-primary to-secondary absolute bottom-0 top-12 flex w-full items-start justify-between gap-6 bg-gradient-to-r px-6 pb-6 backdrop-blur-sm">
       <Sidebar />
       <div className="rounded-box bg-base-100 flex size-full shadow-xl contain-content">
         <Conversations />

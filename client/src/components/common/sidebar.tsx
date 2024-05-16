@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 import Settings from "./settings";
 
 import AddFriendSvg from "@/icons/add-friend-svg";
@@ -8,9 +6,9 @@ import MessageSvg from "@/icons/message-svg";
 import VideoCallSvg from "@/icons/video-call-svg";
 import VoiceCallSvg from "@/icons/voice-call-svg";
 
-const Sidebar: FC = () => {
+const Sidebar = () => {
   return (
-    <div className="flex h-full flex-col gap-4 pt-4">
+    <div className="flex h-full flex-col gap-4">
       <div className="flex flex-col gap-4">
         <button className="btn btn-disabled size-10 min-h-0 self-end p-2">
           <MessageSvg />

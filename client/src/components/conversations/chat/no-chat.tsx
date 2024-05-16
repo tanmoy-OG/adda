@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useAuthContext } from "@/context/auth-context";
 import useListenMessages from "@/hooks/use-listen-messages";
 import EmptyMessageSvg from "@/icons/empty-message-svg";
@@ -12,12 +10,12 @@ const NoChat = () => {
     <div className="flex size-full flex-col justify-center gap-6">
       <EmptyMessageSvg />
       <div className="">
-        <h1 className="text-center text-3xl font-medium">
+        <h1 className="text-center text-xl font-medium">
           Yo {authUser.name} 👋🏽
         </h1>
-        <h1 className="text-center text-3xl font-medium">
-          Select a chat to start{" "}
-          <span className="text-primary font-semibold">Addaa!!</span> ☕
+        <h1 className="text-center text-xl font-medium">
+          Select a contact to start{" "}
+          <span className="text-accent font-semibold">Addaa!!</span> ☕
         </h1>
       </div>
     </div>

@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { FC } from "react";
 
 import { useSocketContext } from "@/context/socket-context";
 import useConversation from "@/global/use-conversation-zustand";
 
-const Conversation: FC = ({ conversation }: any) => {
+const Conversation = ({ conversation }: any) => {
   const { selectedConversation, setSelectedConversation }: any =
     useConversation();
 
@@ -14,7 +13,7 @@ const Conversation: FC = ({ conversation }: any) => {
 
   return (
     <div
-      className={`card card-side rounded-btn w-full hover:cursor-pointer ${isSelected ? "bg-primary" : "bg-base-100"}`}
+      className={`card card-side rounded-btn w-full transition-all hover:-translate-y-2 hover:cursor-pointer ${isSelected ? "bg-info border-accent card-bordered    " : "bg-base-100"}`}
       onClick={() => setSelectedConversation(conversation)}
     >
       <figure className="h-20">
@@ -32,8 +31,8 @@ const Conversation: FC = ({ conversation }: any) => {
         </div>
       </figure>
       <div className="card-body h-20 gap-0 p-4 pl-0">
-        <h2 className="card-title text-sm">{conversation.name}</h2>
-        <p className="text-xs">@{conversation.username}</p>
+        <h2 className="card-title text-sm font-medium">{conversation.name}</h2>
+        <p className="text-secondary text-xs">@{conversation.username}</p>
         <p className="text-xs"></p>
       </div>
     </div>

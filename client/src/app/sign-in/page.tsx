@@ -1,13 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { FC } from "react";
 
 import { useAuthContext } from "@/context/auth-context";
 import LogIn from "@/sign-in/log-in";
 import SignUp from "@/sign-in/sign-up";
 
-const SignIn: FC = () => {
-  const { authUser } = useAuthContext();
+const SignIn = () => {
+  const { authUser }: any = useAuthContext();
   const router = useRouter();
 
   if (authUser) {

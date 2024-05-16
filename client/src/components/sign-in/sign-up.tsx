@@ -1,12 +1,12 @@
 "use client";
-import { FC, FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 
 import useSignup from "@/hooks/use-signup";
 import NameSvg from "@/icons/name-svg";
 import PasswordSvg from "@/icons/password-svg";
 import UsernameSvg from "@/icons/username-svg";
 
-const SignUp: FC = () => {
+const SignUp = () => {
   const [inputs, setInputs] = useState({
     name: "",
     username: "",
@@ -29,7 +29,7 @@ const SignUp: FC = () => {
         className="card-body items-center text-center"
         onSubmit={handleSubmit}
       >
-        <label className="input input-bordered flex items-center gap-2">
+        <label className="input input-bordered input-primary flex items-center gap-2">
           <NameSvg />
           <input
             className="grow"
@@ -39,7 +39,7 @@ const SignUp: FC = () => {
             onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
           />
         </label>
-        <label className="input input-bordered flex items-center gap-2">
+        <label className="input input-bordered input-primary flex items-center gap-2">
           <UsernameSvg />
           <input
             className="grow"
@@ -49,7 +49,7 @@ const SignUp: FC = () => {
             onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
           />
         </label>
-        <label className="input input-bordered flex items-center gap-2">
+        <label className="input input-bordered input-primary flex items-center gap-2">
           <PasswordSvg />
           <input
             className="grow"
@@ -59,7 +59,7 @@ const SignUp: FC = () => {
             onChange={(e) => setInputs({ ...inputs, pass: e.target.value })}
           />
         </label>
-        <label className="input input-bordered flex items-center gap-2">
+        <label className="input input-bordered input-primary flex items-center gap-2">
           <PasswordSvg />
           <input
             className="grow"
@@ -70,17 +70,21 @@ const SignUp: FC = () => {
           />
         </label>
         <select
-          className="select select-bordered w-full max-w-xs"
+          className="select select-bordered select-primary mb-4 w-full max-w-xs"
           value={inputs.gender}
           onChange={(e) => setInputs({ ...inputs, gender: e.target.value })}
         >
           <option selected>Male</option>
           <option>Female</option>
         </select>
-        <div className="card-actions">
-          <button className="btn btn-primary" disabled={loading} type="submit">
+        <div className="card-actions w-full">
+          <button
+            className="btn btn-primary text-base-100 mx-auto w-1/3"
+            disabled={loading}
+            type="submit"
+          >
             {loading ? (
-              <span className="loading loading-spinner text-primary"></span>
+              <span className="loading loading-spinner text-info "></span>
             ) : (
               "Sign Up"
             )}

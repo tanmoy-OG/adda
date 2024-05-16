@@ -1,9 +1,9 @@
-import { FC } from "react";
-
-const NavBar: FC = () => {
+const NavBar = () => {
   return (
-    <div className="navbar bg-primary hover:cursor-default">
-      <div className="mx-auto text-center text-xl font-semibold">Addaa</div>
+    <div className="navbar from-primary to-secondary min-h-12 bg-gradient-to-r backdrop-blur-sm hover:cursor-default">
+      <div className="text-info mx-auto text-center text-2xl font-semibold">
+        Addaa
+      </div>
     </div>
   );
 };

@@ -15,12 +15,12 @@ const config: Config = {
     themes: [
       {
         mytheme: {
-          primary: "#FF7D5C",
-          secondary: "#38BDF8",
-          accent: "#B387FA",
+          primary: "#B98AAF",
+          secondary: "#B57184",
+          accent: "#FE8965",
           neutral: "#EBEBEB",
           "base-100": "#ffffff",
-          info: "#89E0EB",
+          info: "#F6D9D0",
           success: "#66CC8A",
           warning: "#FFB86C",
           error: "#E96D7B",

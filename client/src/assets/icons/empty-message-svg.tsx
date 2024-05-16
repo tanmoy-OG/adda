@@ -1,7 +1,7 @@
 const EmptyMessageSvg = () => {
   return (
     <svg
-      className="lucide lucide-messages-square size-16 self-center"
+      className="lucide lucide-messages-square text-secondary size-12 self-center transition-all hover:-translate-y-2 hover:-rotate-12 hover:scale-150"
       fill="none"
       height="24"
       stroke="currentColor"
