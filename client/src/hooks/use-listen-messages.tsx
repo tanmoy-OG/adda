@@ -19,12 +19,17 @@ const useListenMessages = () => {
       if (newMessage.senderId === selectedConversation?._id) {
         setMessages([...messages, newMessage]);
       } else {
-        toast(() => (
-          <div>
-            <h1 className="mb-2 font-medium">{newMessage.name}</h1>
-            <p className="text-sm">{newMessage.message}</p>
-          </div>
-        ));
+        toast(
+          () => (
+            <div className="">
+              <h1 className="mb-2 font-medium">{newMessage.name}</h1>
+              <p className="text-sm">{newMessage.message}</p>
+            </div>
+          ),
+          {
+            icon: '☕',
+          }
+        );
       }
     });
 
