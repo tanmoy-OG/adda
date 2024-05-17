@@ -16,11 +16,14 @@ const SignIn = () => {
 
   return (
     <div className="absolute top-1/4 flex w-full flex-col justify-center">
-      <div className="tabs tabs-lifted mx-auto" role="tablist">
+      <div
+        className="tabs tabs-lifted tabs-lg mx-4 grid-cols-3 sm:mx-auto"
+        role="tablist"
+      >
         <input
           defaultChecked
           aria-label="Log In"
-          className="tab [--tab-bg:#EBEBEB] [--tab-border:0px] [--tab-corner-bg:#EBEBEB]"
+          className="tab text-base tracking-tighter [--tab-bg:#EBEBEB] [--tab-border:0px] [--tab-corner-bg:#EBEBEB]"
           name="my_tabs_2"
           role="tab"
           type="radio"
@@ -31,7 +34,7 @@ const SignIn = () => {
 
         <input
           aria-label="Sign Up"
-          className="tab [--tab-bg:#EBEBEB] [--tab-border:0px] [--tab-corner-bg:#EBEBEB]"
+          className="tab text-base [--tab-bg:#EBEBEB] [--tab-border:0px] [--tab-corner-bg:#EBEBEB]"
           name="my_tabs_2"
           role="tab"
           type="radio"

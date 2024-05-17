@@ -19,7 +19,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // console.log(inputs);
+    console.log(inputs);
     await signup(inputs);
   };
 
@@ -70,12 +70,19 @@ const SignUp = () => {
           />
         </label>
         <select
-          className="select select-bordered select-primary mb-4 w-full max-w-xs"
+          className={`select select-bordered select-primary mb-4 w-full max-w-xs ${inputs.gender === "" ? "text-zinc-400" : ""}`}
           value={inputs.gender}
           onChange={(e) => setInputs({ ...inputs, gender: e.target.value })}
         >
-          <option selected>Male</option>
-          <option>Female</option>
+          <option disabled hidden selected className="text-red-500" value="">
+            Select a gender, don&apos;t be woke
+          </option>
+          <option className="text-black" value="Male">
+            Male
+          </option>
+          <option className="text-black" value="Female">
+            Female
+          </option>
         </select>
         <div className="card-actions w-full">
           <button
