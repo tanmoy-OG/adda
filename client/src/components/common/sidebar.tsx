@@ -8,8 +8,8 @@ import VoiceCallSvg from "@/icons/voice-call-svg";
 
 const Sidebar = () => {
   return (
-    <div className="flex h-full flex-col gap-4">
-      <div className="flex flex-col gap-4">
+    <div className="flex h-full flex-col gap-1 sm:gap-2 lg:gap-4">
+      <div className="flex flex-col gap-1 sm:gap-2 lg:gap-4">
         <button className="btn btn-disabled size-10 min-h-0 self-end p-2">
           <MessageSvg />
         </button>
@@ -21,7 +21,7 @@ const Sidebar = () => {
         </button>
         {/* <div className="divider"></div> */}
       </div>
-      <div className="mt-auto flex flex-col gap-4">
+      <div className="mt-auto flex flex-col gap-1 sm:gap-2 lg:gap-4">
         <button className="btn btn-disabled size-10 min-h-0 self-end p-2">
           <VideoCallSvg />
         </button>
