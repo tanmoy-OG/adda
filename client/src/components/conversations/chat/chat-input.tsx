@@ -32,6 +32,7 @@ const ChatInput = () => {
           className="textarea bg-neutral w-full resize-none text-sm focus:outline-none"
           placeholder="Message"
           rows={1}
+          style={{ scrollbarGutter: "stable" }}
           value={message}
           onChange={handleChange}
         ></textarea>

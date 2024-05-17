@@ -18,7 +18,10 @@ const Chat = () => {
   }, [messages]);
 
   return (
-    <div className="size-full overflow-auto p-4">
+    <div
+      className="size-full overflow-auto p-4"
+      style={{ scrollbarGutter: "stable" }}
+    >
       {!loading &&
         messages.length > 0 &&
         messages.map((message: any) => (

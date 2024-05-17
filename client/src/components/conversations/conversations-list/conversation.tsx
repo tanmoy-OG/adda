@@ -18,7 +18,7 @@ const Conversation = ({ conversation }: any) => {
     >
       <figure className="h-20">
         <div
-          className={`avatar m-4 size-12 ${isOnline ? "online" : "offline"}`}
+          className={`avatar size-12 sm:m-2 lg:m-4 ${isOnline ? "online" : "offline"}`}
         >
           <div className="rounded-full">
             <Image
@@ -30,8 +30,10 @@ const Conversation = ({ conversation }: any) => {
           </div>
         </div>
       </figure>
-      <div className="card-body h-20 gap-0 p-4 pl-0">
-        <h2 className="card-title text-sm font-medium">{conversation.name}</h2>
+      <div className="card-body h-20 w-1/2 gap-0 text-wrap px-0 py-4 md:pr-2 lg:p-4 lg:pl-0">
+        <h2 className="card-title text-wrap text-sm font-medium">
+          {conversation.name}
+        </h2>
         <p className="text-secondary text-xs">@{conversation.username}</p>
         <p className="text-xs"></p>
       </div>

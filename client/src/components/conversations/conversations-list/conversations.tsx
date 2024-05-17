@@ -14,7 +14,10 @@ const Conversations = () => {
     <div className="bg-neutral flex h-full w-1/3 flex-col p-4 pr-0">
       <MyProfileInfo />
       <Search setSearch={setSearch} />
-      <div className="flex h-full flex-col gap-4 overflow-y-auto pr-4 pt-4">
+      <div
+        className="flex h-full flex-col gap-4 overflow-y-auto pr-2 pt-4"
+        style={{ scrollbarGutter: "stable" }}
+      >
         {conversations
           .filter((conversation: any) => {
             return search.toLowerCase() === ""

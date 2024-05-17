@@ -7,7 +7,7 @@ const MyProfileInfo = () => {
 
   return (
     <div className="mb-4 mr-4 flex">
-      <div className="avatar mx-4 my-auto mt-2 size-12">
+      <div className="avatar my-auto mr-2 size-12  lg:mr-4">
         <div className="rounded-full">
           <Image
             alt="avatar"
@@ -17,7 +17,7 @@ const MyProfileInfo = () => {
           />
         </div>
       </div>
-      <div className="my-auto flex flex-col pr-4">
+      <div className="mb-auto flex flex-col px-0 md:pr-2 lg:pr-4">
         <h2 className="font-medium">{authUser.name}</h2>
         <p className="text-secondary text-xs">@{authUser.username}</p>
       </div>
