@@ -25,17 +25,13 @@ app.use(cookieParser());
 app.use(express.static("public"));
 
 // routing setup
-app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "api", "components", "home.htm"));
-});
-
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
 // Handle unknown routes
-app.all("*", (req, _, next) => {
-  next(new CustomError(`Route '${req.originalUrl}' not found`, 404));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "api", "components", "home.htm"));
 });
 
 server.listen(process.env.PORT, () => {
