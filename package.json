@@ -6,8 +6,8 @@
   "type": "module",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server.js",
-    "dev": "nodemon server/server.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "prettier --check --ignore-path .gitignore .",

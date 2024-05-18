@@ -45,4 +45,4 @@ server.listen(process.env.PORT, () => {
 });
 
 // Export the Express API
-module.exports = app;
+export default app;
