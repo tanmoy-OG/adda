@@ -1,12 +1,12 @@
 import dotenv from "dotenv";
 import express from "express";
 import cookieParser from "cookie-parser";
-import authRoutes from "./server/routes/authRoutes.js";
-import messageRoutes from "./server/routes/messageRoutes.js";
-import userRoutes from "./server/routes/userRoutes.js";
-import connectToMongoDB from "./server/db/connectMongoDB.js";
+import authRoutes from "./routes/authRoutes.js";
+import messageRoutes from "./routes/messageRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import connectToMongoDB from "./db/connectMongoDB.js";
 import CustomError from "./server/utils/customError.js";
-import { app, server } from "./server/socket/socket.js";
+import { app, server } from "./socket/socket.js";
 
 // load environment variables
 dotenv.config();
@@ -21,6 +21,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 // routing setup
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
