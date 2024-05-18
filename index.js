@@ -31,7 +31,7 @@ app.use("/api/users", userRoutes);
 
 // Handle unknown routes
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "api", "components", "home.htm"));
+  res.send("404: Page not found");
 });
 
 server.listen(process.env.PORT, () => {
