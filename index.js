@@ -1,12 +1,10 @@
 import dotenv from "dotenv";
 import express from "express";
-import path from "path";
 import cookieParser from "cookie-parser";
 import authRoutes from "./api/routes/authRoutes.js";
 import messageRoutes from "./api/routes/messageRoutes.js";
 import userRoutes from "./api/routes/userRoutes.js";
 import connectToMongoDB from "./api/db/connectMongoDB.js";
-import CustomError from "./server/utils/customError.js";
 import { app, server } from "./api/socket/socket.js";
 
 // load environment variables
@@ -25,6 +23,9 @@ app.use(cookieParser());
 app.use(express.static("public"));
 
 // routing setup
+app.get("/", (req, res) => {
+  res.send("Express on Vercel 🚀");
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
@@ -42,3 +43,6 @@ server.listen(process.env.PORT, () => {
     console.log(`app listening to port ${PORT}`);
   }
 });
+
+// Export the Express API
+module.exports = app;
