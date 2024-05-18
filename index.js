@@ -1,12 +1,12 @@
 import dotenv from "dotenv";
 import express from "express";
 import cookieParser from "cookie-parser";
-import authRoutes from "./routes/authRoutes.js";
-import messageRoutes from "./routes/messageRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
-import connectToMongoDB from "./db/connectMongoDB.js";
+import authRoutes from "./api/routes/authRoutes.js";
+import messageRoutes from "./api/routes/messageRoutes.js";
+import userRoutes from "./api/routes/userRoutes.js";
+import connectToMongoDB from "./api/db/connectMongoDB.js";
 import CustomError from "./server/utils/customError.js";
-import { app, server } from "./socket/socket.js";
+import { app, server } from "./api/socket/socket.js";
 
 // load environment variables
 dotenv.config();
