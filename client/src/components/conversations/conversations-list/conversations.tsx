@@ -11,11 +11,11 @@ const Conversations = () => {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="bg-neutral flex h-full w-1/3 flex-col p-4 pr-0">
+    <div className="bg-neutral flex h-full w-1/3 flex-col gap-4 p-4 pr-0">
       <MyProfileInfo />
       <Search setSearch={setSearch} />
       <div
-        className="flex h-full flex-col gap-4 overflow-y-auto pr-2 pt-4"
+        className="flex h-full flex-col gap-4 overflow-y-auto pr-2"
         style={{ scrollbarGutter: "stable" }}
       >
         {conversations

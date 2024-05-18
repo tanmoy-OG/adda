@@ -25,7 +25,7 @@ const ChatInput = () => {
   };
 
   return (
-    <form className="form-control mt-auto px-4" onSubmit={handleSubmit}>
+    <form className="form-control mt-auto px-4 pt-1" onSubmit={handleSubmit}>
       <div className="flex w-full gap-4">
         <textarea
           ref={textAreaRef}

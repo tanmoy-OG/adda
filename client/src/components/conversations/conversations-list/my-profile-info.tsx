@@ -6,8 +6,8 @@ const MyProfileInfo = () => {
   const { authUser }: any = useAuthContext();
 
   return (
-    <div className="mb-4 mr-4 flex">
-      <div className="avatar my-auto mr-2 size-12  lg:mr-4">
+    <div className="mr-4 flex">
+      <div className="avatar my-auto mr-2 size-12 lg:mr-4">
         <div className="rounded-full">
           <Image
             alt="avatar"
