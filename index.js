@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import express from "express";
+import path from "path";
 import cookieParser from "cookie-parser";
 import authRoutes from "./api/routes/authRoutes.js";
 import messageRoutes from "./api/routes/messageRoutes.js";
@@ -20,8 +21,13 @@ app.use(express.json());
 // parse cookies
 app.use(cookieParser());
 
+// serve static files
+app.use(express.static("public"));
+
 // routing setup
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "api", "components", "home.htm"));
+});
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
