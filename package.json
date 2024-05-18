@@ -11,8 +11,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "prettier --check --ignore-path .gitignore .",
-    "format:fix": "prettier --write --ignore-path .gitignore .",
-    "build": "yarn; cd client; yarn; yarn build;"
+    "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "keywords": [],
   "author": "",
