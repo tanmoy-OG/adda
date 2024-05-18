@@ -1,8 +1,8 @@
 {
   "packageManager": "yarn@4.2.1",
-  "name": "adda",
+  "name": "addaa-api",
   "version": "1.0.0",
-  "description": "Adda - Backend/API Services",
+  "description": "addaa - Backend/API Services",
   "type": "module",
   "main": "server/server.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "lint:fix": "eslint --fix .",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
-    "build": "yarn && yarn --cwd client && yarn build --cwd client"
+    "build": "yarn; cd client; yarn; yarn build;"
   },
   "keywords": [],
   "author": "",

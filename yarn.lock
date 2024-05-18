@@ -340,9 +340,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"adda@workspace:.":
+"addaa-api@workspace:.":
   version: 0.0.0-use.local
-  resolution: "adda@workspace:."
+  resolution: "addaa-api@workspace:."
   dependencies:
     "@types/express": "npm:^4.17.21"
     bcryptjs: "npm:^2.4.3"
