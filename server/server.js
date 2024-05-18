@@ -3,26 +3,16 @@ import express from "express";
 import authRoutes from "./routes/authRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-// const path = require("path");
+const path = require("path");
 import cookieParser from "cookie-parser";
 import connectToMongoDB from "./db/connectMongoDB.js";
 // import cors from "cors";
 import { app, server } from "./socket/socket.js";
-// const loginRouter = require("./router/loginRouter");
-// const usersRouter = require("./router/usersRouter");
-// const inboxRouter = require("./router/inboxRouter");
 
 // app.use(cors());
 dotenv.config();
 
-// database connection
-// mongoose
-//   .connect(process.env.MONGO_CONNECTION_STRING, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => console.log("database connection successful!"))
-//   .catch((err) => console.log(err));
+const __dirname = path.resolve();
 
 // request parsers
 app.use(express.json());
@@ -34,9 +24,12 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
-// app.get("/", (req, res) => {
-//   res.send("Hello World!");
-// });
+
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+});
 
 server.listen(process.env.PORT, () => {
   connectToMongoDB();
