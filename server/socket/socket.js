@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["https://www.addaa.life/"],
+    origin: ["https://addaa-jet.vercel.app"],
     methods: ["GET", "POST"],
   },
 });
