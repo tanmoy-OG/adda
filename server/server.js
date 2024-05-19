@@ -1,17 +1,14 @@
 import dotenv from "dotenv";
 import express from "express";
 import cookieParser from "cookie-parser";
-import authRoutes from "./api/routes/authRoutes.js";
-import messageRoutes from "./api/routes/messageRoutes.js";
-import userRoutes from "./api/routes/userRoutes.js";
-import connectToMongoDB from "./api/db/connectMongoDB.js";
-import { app, server } from "./api/socket/socket.js";
-import cors from "cors";
+import authRoutes from "./routes/authRoutes.js";
+import messageRoutes from "./routes/messageRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import connectToMongoDB from "./db/connectMongoDB.js";
+import { app, server } from "./socket/socket.js";
 
 // load environment variables
 dotenv.config();
-connectToMongoDB();
-app.use(cors());
 
 // PORT
 const PORT = process.env.PORT || 5000;
@@ -39,7 +36,7 @@ app.get("*", (req, res) => {
 });
 
 server.listen(process.env.PORT, () => {
-  console.log("Inside Server");
+  connectToMongoDB();
   if (process.env.NODE_ENV === "development") {
     console.log(`app listening to port http://localhost:${PORT}`);
   } else {
