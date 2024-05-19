@@ -6,9 +6,7 @@ import messageRoutes from "./api/routes/messageRoutes.js";
 import userRoutes from "./api/routes/userRoutes.js";
 import connectToMongoDB from "./api/db/connectMongoDB.js";
 import { app, server } from "./api/socket/socket.js";
-import cors from "cors";
 
-app.use(cors());
 // load environment variables
 dotenv.config();
 
