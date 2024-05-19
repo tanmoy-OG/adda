@@ -1,5 +1,5 @@
 {
-  "packageManager": "yarn@4.2.1",
+  "packageManager": "yarn@1.22.22",
   "name": "addaa-api",
   "version": "1.0.0",
   "description": "addaa - Backend/API Services",
