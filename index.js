@@ -6,10 +6,12 @@ import messageRoutes from "./api/routes/messageRoutes.js";
 import userRoutes from "./api/routes/userRoutes.js";
 import connectToMongoDB from "./api/db/connectMongoDB.js";
 import { app, server } from "./api/socket/socket.js";
+import cors from "cors";
 
 // load environment variables
 dotenv.config();
 connectToMongoDB();
+app.use(cors());
 
 // PORT
 const PORT = process.env.PORT || 5000;
