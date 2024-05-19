@@ -52,7 +52,9 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { username, pass } = req.body;
+    console.log("hit" + username + pass);
     const user = await User.findOne({ username });
+    console.log(user);
     const isPasswordCorrect = await bcrypt.compare(pass, user?.pass || "");
 
     if (!user || !isPasswordCorrect) {
