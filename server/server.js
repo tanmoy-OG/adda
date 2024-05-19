@@ -25,7 +25,10 @@ app.use(cookieParser());
 app.use(express.static("public"));
 
 // routing setup
-app.get("/", (req, res) => {
+app.all("/", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
   res.send("Express on Vercel 🚀");
 });
 app.use("/api/auth", authRoutes);
