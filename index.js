@@ -9,6 +9,7 @@ import { app, server } from "./api/socket/socket.js";
 
 // load environment variables
 dotenv.config();
+connectToMongoDB();
 
 // PORT
 const PORT = process.env.PORT || 5000;
@@ -36,7 +37,7 @@ app.get("*", (req, res) => {
 });
 
 server.listen(process.env.PORT, () => {
-  connectToMongoDB();
+  console.log("Inside Server");
   if (process.env.NODE_ENV === "development") {
     console.log(`app listening to port http://localhost:${PORT}`);
   } else {
